@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-inquirer.createPromptModule([
+inquirer.prompt([
     {
         type: 'input',
         name: 'text',
@@ -24,5 +24,5 @@ inquirer.createPromptModule([
         message: 'What color would you like the shape of your logo?',
     },
 ]).then((data) => {
-    
+
 });
