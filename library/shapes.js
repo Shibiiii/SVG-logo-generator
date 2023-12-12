@@ -3,7 +3,7 @@ class shapes {
     constructor(){
         this.color = ''
     } setColor(color){
-        this.colo = (color);
+        this.color = (color);
     }
 } class circle extends shapes {
     render() {
