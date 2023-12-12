@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {circle, square, triangle} = require(/library/shapes.js);
+const {circle, square, triangle} = require('./library/shapes');
 
 inquirer.prompt([
     {
@@ -24,6 +24,13 @@ inquirer.prompt([
         name: 'shape-color',
         message: 'What color would you like the shape of your logo?',
     },
-]).then((data) => {
+]); 
 
-});
+class svg {
+    constructor() {
+        this.text = ''
+        this.shape = ''
+    } render() {
+        return `<svg version = '1.1' xmlns = 'http://www.w3.org/2000/svg' width = '300' height = '200'>${this.shape}${this.text}</svg>`
+    }
+}
