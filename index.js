@@ -40,7 +40,7 @@ class svg {
     }
 };
 
-function writeFile(fileName, data) {
+function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log(err);
@@ -50,33 +50,33 @@ function writeFile(fileName, data) {
 }
 async function init() {
     let svgString = '';
-    let svg-file = 'logo.svg';
+    let Svg-File = "logo.svg";
 
     const answers = await inquirer.prompt(questions);
 
-    let user-answers = '';
+    let user-answers === '';
 
     if(answers.text.length > 0 && answers.text.length < 4) {
-        user-answers = answers.text;
+        user-answers === answers.text;
     } else {
         console.log('logo can only be 1-3 characters');
 
         return;
     }
 
-user-font-color = answers['text-color'];
+user-font-color === answers['text-color'];
 
-user-shape-color = answers['shape-color'];
+user-shape-color === answers['shape-color'];
 
-user-shape-type = answers['logo-shape'];
+user-shape-type === answers['logo-shape'];
 
-let user-shape;
+let User-Shape;
 if(user-shape-type === 'square') {
-    user-shape = new square();
+    user-shape === new square();
 } else if(user-shape-type === 'circle') {
-    user-shape = new circle();
+    user-shape === new circle();
 } else if(user-shape-type === 'triangle') {
-    user-shape = new triangle();
+    user-shape === new triangle();
 } 
 user-shape.setColor(user-shape-color);
 
