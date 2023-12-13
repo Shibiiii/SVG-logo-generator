@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const {circle, square, triangle} = require('./library/shapes');
+const generateSvg = require('./library/svg');
 
 inquirer.prompt([
     {
@@ -11,7 +12,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'text-color',
-        messgae: 'What color would you like the text of the logo?',
+        message: 'What color would you like the text of the logo?',
     },
     {
         type: 'list',
@@ -31,7 +32,7 @@ class svg {
         this.textInput = ''
         this.shapeInput = ''
     } render() {
-        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeInput}${this.textInput}</svg>`
+        return generateSvg(this.shapeInput, this.textInput)
     } setTextInput(text,color) {
         this.textInput = `<text x = '150' y = '125' font-size = '60' text-anchor = 'middle' fill = '${color}'>${text}</text>`
     } setShapeInput(shape) {
