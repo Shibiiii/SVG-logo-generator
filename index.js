@@ -62,7 +62,7 @@ async function init() {
 
         return;
     }
-}
+
 user-font-color = answers['text-color'];
 
 user-shape-color = answers['shape-color'];
@@ -79,6 +79,14 @@ if(user-shape-type === 'square') {
 } 
 user-shape.setColor(user-shape-color);
 
-let svg
+let svg = new svg();
+svg.setTextInput(user-text, user-font-color);
+svg.setShapeInput(user-shape);
+svgString = svg.render();
+
+writeToFile(svg-file, svgString);
+}
+
+init()
 
 
