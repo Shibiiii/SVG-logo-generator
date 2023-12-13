@@ -28,9 +28,13 @@ inquirer.prompt([
 
 class svg {
     constructor() {
-        this.text = ''
-        this.shape = ''
+        this.textInput = ''
+        this.shapeInput = ''
     } render() {
-        return `<svg version = '1.1' xmlns = 'http://www.w3.org/2000/svg' width = '300' height = '200'>${this.shape}${this.text}</svg>`
+        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeInput}${this.textInput}</svg>`
+    } setTextInput(text,color) {
+        this.textInput = `<text x = '150' y = '125' font-size = '60' text-anchor = 'middle' fill = '${color}'>${text}</text>`
+    } setShapeInput(shape) {
+        this.shapeInput = shape.render()
     }
 }
